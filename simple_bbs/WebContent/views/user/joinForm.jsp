@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.io.PrintWriter"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,20 +10,18 @@
 <script type="text/javascript" src="js/joinCheck.js"></script>
 </head>
 <body>
-	<%-- session 체크 --%>
-	<%
-		if(session.getAttribute("loginUser") != null){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('이미 로그인 되었습니다.')");
-			script.println("location.href='main.jsp'");
-			script.println("</script>");
-		}
-	%>
+	<c:set var="loginUser" value="${sessionScope.loginUser }"/>
+	<c:if test="${loginUser != null }">
+		<script>
+			alert('이미 로그인 되었습니다.');
+			location.href="main.do";
+		</script>
+	</c:if>
+
 
 
 	<h1>JoinForm</h1>
-	<form action="joinAction.jsp" method="post" name="frm_join">
+	<form action="join.do" method="post" name="frm_join">
 		<table>
 			<thead>
 				<th colspan="2" style="background-color:#eeeeee; text-align:center;">회원가입</th>
@@ -57,7 +56,7 @@
 				<th colspan="2" style="text-align:right"><input type="button" onclick="joinConfirm()" value="회원가입"></th>
 			</tfoot>
 		</table>
-			<input type="button" onclick="location.href='main.jsp'" value="이전">
+			<input type="button" onclick="location.href='main.do'" value="이전">
 	</form>
 </body>
 </html>

@@ -13,7 +13,7 @@
 	%>
 	<script>
 		alert("로그아웃되었습니다.");
-		location.href='main.jsp';
+		location.href='main.do';
 	</script>
 </body>
 </html>

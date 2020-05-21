@@ -11,6 +11,6 @@
 	
 	<p>글 작성이 완료되었습니다</p>
 	
-	<a href="view.jsp?writeComplete=true">작성글 확인</a> &nbsp;&nbsp;<a href="board.jsp">목록으로</a>
+	<a href="view.do?complete=write">작성글 확인</a> &nbsp;&nbsp;<a href="board.do">목록으로</a>
 </body>
 </html>

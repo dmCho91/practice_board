@@ -110,6 +110,7 @@ public class BbsDTO {
 	public void setbAvailable(int bAvailable) {
 		this.bAvailable = bAvailable;
 	}
+
 	
 	
 }
